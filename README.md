@@ -1,5 +1,4 @@
-
-Welcome to Rainforest.
+##Welcome to Rainforest.
 
 You’ve made an app similar to Imgur we called Photogur, now we are going to make another one and dive deeper into Rails concepts. This app is going to be a clone of Amazon, the famous e-commerce application. It's going to let users create their own products and allow other users to review them.
 
