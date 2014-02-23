@@ -1,4 +1,5 @@
 <div class="products">
+
   <table>
     <tr>
       <th>Name</th>
@@ -25,3 +26,10 @@
 <br />
 
 <%= link_to 'New Product', new_product_path %>
+
+<br>
+
+  <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
+  <%= submit_tag "Search", :name => nil %>
+  <% end %>

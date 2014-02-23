@@ -2,13 +2,19 @@ class ProductsController < ApplicationController
   before_filter :ensure_logged_in, :only => [:show]
 
   def index
-    @products = Product.all
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC")
+    else
+      @products = Product.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @products }
+      end
     end
   end
+
+
 
   def show
     @product = Product.find(params[:id])
